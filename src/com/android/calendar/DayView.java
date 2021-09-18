@@ -362,7 +362,7 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
     protected final EventGeometry mEventGeometry;
 
     private static float GRID_LINE_LEFT_MARGIN = 0;
-    private static final float GRID_LINE_INNER_WIDTH = 1;
+    private static final float GRID_LINE_INNER_WIDTH = 30;  //Markus
 
     private static final int DAY_GAP = 1;
     private static final int HOUR_GAP = 1;

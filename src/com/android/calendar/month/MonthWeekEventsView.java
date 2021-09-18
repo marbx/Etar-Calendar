@@ -474,11 +474,14 @@ public class MonthWeekEventsView extends SimpleWeekView {
         r.top = mDaySeparatorInnerWidth + (mTodayHighlightWidth / 2);
         r.bottom = mHeight - (int) Math.ceil(mTodayHighlightWidth / 2.0f);
         p.setStyle(Style.STROKE);
-        p.setStrokeWidth(mTodayHighlightWidth);
+        p.setStrokeWidth(mTodayHighlightWidth*10); // Markus
         r.left = computeDayLeftPosition(mTodayIndex) + (mTodayHighlightWidth / 2);
         r.right = computeDayLeftPosition(mTodayIndex + 1)
                 - (int) Math.ceil(mTodayHighlightWidth / 2.0f);
         p.setColor(mTodayAnimateColor | (mAnimateTodayAlpha << 24));
+        // Markus GEHT NICHT
+        //  mTodayAnimateColor | (mAnimateTodayAlpha << 24)
+        // mMonthBusyBitsConflictTimeColor
         canvas.drawRect(r, p);
         p.setStyle(Style.FILL);
     }
@@ -499,7 +502,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
         // Horizontal line
         lines[i++] = 0;
         lines[i++] = 0;
-        lines[i++] = mWidth;
+        lines[i++] = mWidth*9;  // Markus
         lines[i++] = 0;
         int y0 = 0;
         int y1 = mHeight;
@@ -513,8 +516,8 @@ public class MonthWeekEventsView extends SimpleWeekView {
             lines[i++] = y1;
         }
         p.setColor(mDaySeparatorInnerColor);
-        p.setStrokeWidth(mDaySeparatorInnerWidth);
-        canvas.drawLines(lines, 0, lines.length, p);
+        p.setStrokeWidth(mDaySeparatorInnerWidth*9);  // Markus
+        canvas.drawLines(lines, 0, lines.length-5, p);
     }
 
     @Override

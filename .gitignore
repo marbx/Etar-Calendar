@@ -1,3 +1,11 @@
+#markus
+external/calendar/
+external/chips/
+external/colorpicker/
+external/timezonepicker/
+
+.idea/
+
 # Built application files
 *.apk
 *.ap_
